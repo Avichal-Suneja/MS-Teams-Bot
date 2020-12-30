@@ -150,18 +150,28 @@ password.submit()
 
 
 # Getting rid of the popup Modals blocking other elements
-#cross_1 = getElement('css', 1, '#myModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)')
-#myClick(cross_1)
-#cross_2 = getElement('css', 0.5, '#ModalPopTEDP > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)')
-#myClick(cross_2)
+while True:
+	try:
+		# Going to the time table page and getting the subject codes and timings
+		time_table = getElement('xpath', 2, '//*[@id="10"]')
+		myClick(time_table)
+		break
+	except:
+		try:
+			cross_1 = getElement('css', 1, '#myModal > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)')
+			myClick(cross_1)
+		except:
+			try:
+				cross_2 = getElement('css', 0.5, '#ModalPopTEDP > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)')
+				myClick(cross_2)
+			except:
+				try:
+					cross_3 = getElement('css', 0.5, '#myModal > div > div > div.modal-header.modal-lg > button')
+					myClick(cross_3)
+				except:
+					print("The Program will probably break now Fs in the chat")
+					
 
-cross_3 = getElement('css', 0.5, '#myModal > div > div > div.modal-header.modal-lg > button')
-myClick(cross_3)
-
-
-# Going to the time table page and getting the subject codes and timings
-time_table = getElement('xpath', 2, '//*[@id="10"]')
-myClick(time_table)
 
 sleep(2)
 Time_list = getElement('class', 1, 'class-time')
