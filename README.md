@@ -5,4 +5,4 @@ Then it launches MS teams on your desktop and uses image recognition to find the
 Ten minutes before every class ends, it also notifies you on your discord server through the post API of the request module for attendance. 
 This Project is just for Educational Purpose and does not support missing your classes in any way.
 
-PS: For this to work on your computer you need to have Python on your machine and pip install all the modules mentioned in the code and a geckodriver for Selenium Module to run Chrome browser remotely
+PS: For this to work on your computer you need to have Python on your machine and pip install all the modules mentioned in the code and  geckodriver for Selenium Module to run Chrome browser remotely
